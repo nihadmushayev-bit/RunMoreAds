@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://run-more-ads-nihad.vividmug4.chatgpt.site/sitemap.xml

@@ -1,0 +1,1 @@
+{"name":"scalible-copy","private":true,"type":"module","scripts":{"start":"node server.mjs","mirror":"node mirror.mjs"}}

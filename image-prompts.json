@@ -1,0 +1,20 @@
+[
+  {
+    "name": "creative-team",
+    "prompt": "Use case: photorealistic-natural. Asset: vertical 2:3 agency team portrait. Generate a completely new fictional adult woman in her late twenties, shoulder-length dark wavy hair, wearing an ivory t-shirt and muted warm taupe overshirt. Waist-up to hip portrait, centered, looking at camera with a small relaxed confident smile. Neutral warm pale gray seamless studio background, soft natural window light, editorial photography, real pores, natural hands and anatomy, subtle film grain. Professional creative strategist, understated contemporary clothing. No text, no logos, no props. Photorealistic, authentic professional portrait, no beauty retouching, no artificial doll-like skin. 800 by 1200 or matching 2:3 portrait proportions.",
+    "tool": "built-in image_gen",
+    "file": "dist/assets/run-more-ads/team/creative-team.png"
+  },
+  {
+    "name": "media-buying-team",
+    "prompt": "Use case: photorealistic-natural. Asset: vertical 2:3 agency team portrait. Generate a completely new fictional adult man in his early thirties, short brown hair with a little natural texture, light stubble, wearing a charcoal relaxed crew-neck t-shirt. Waist-up to hip portrait, centered, facing camera with a friendly confident expression. Neutral warm pale gray seamless studio background, soft natural window light, editorial photography, real skin pores and realistic anatomy, subtle film grain. Professional media buyer, contemporary understated clothing. No text, no logos, no props. Photorealistic authentic professional portrait, no over-retouching. Match 2:3 portrait proportions.",
+    "tool": "built-in image_gen",
+    "file": "dist/assets/run-more-ads/team/media-buying-team.png"
+  },
+  {
+    "name": "account-team",
+    "prompt": "Use case: photorealistic-natural. Asset: vertical 2:3 agency team portrait. Generate a completely new fictional adult woman in her early thirties, medium olive skin, dark curly shoulder-length hair, wearing a simple black long-sleeved blouse and beige trousers. Waist-up to hip portrait, centered, relaxed folded arms, friendly slight smile looking at camera. Neutral warm pale gray seamless studio background, soft natural window light, editorial photography, realistic skin texture and natural hands, subtle film grain. Professional account strategist, understated contemporary clothing. No text, no logos, no props. Photorealistic authentic professional portrait, no doll-like skin. Match 2:3 portrait proportions.",
+    "tool": "built-in image_gen",
+    "file": "dist/assets/run-more-ads/team/account-team.png"
+  }
+]
