@@ -1,6 +1,8 @@
 # Run More Ads
 
-Güncel ajans web sitesi. Yayın: https://run-more-ads-nihad.vividmug4.chatgpt.site/
+Güncel ajans web sitesi. Vercel yayını: https://runmoreads.vercel.app/
+
+Sites yayını: https://run-more-ads-nihad.vividmug4.chatgpt.site/
 
 Site dosyaları `dist/` içindedir. CRM kayıt fonksiyonu Base44 üzerinde ayrıca barındırılır; bu depo web sitesinin kaynaklarını ve form bağlantı ayarını içerir.
 
@@ -32,3 +34,9 @@ Ardından http://127.0.0.1:4173 adresini açın. Kurulum veya paket indirme gere
 Instagram https://www.instagram.com/runmoreadsco adresine, LinkedIn ise https://www.linkedin.com/company/runmoreadsco adresine bağlanır. Twitter kaldırılmıştır; LinkedIn yalnızca metin bağlantısıdır. Ajans rakamları kullanıcının doğruladığı $50K+ gelir ve 50+ markadır; kuruluş 2024, konum Azerbaycan'dır. Eski müşteri sonuçları ve şablon müşteri isimleri kaldırılmıştır. Video case study sayfaları, sitedeki lisanslı stok çekimlerle hazırlanmış yaratıcı konseptlerdir; müşteri kampanyası sonucu iddia etmez.
 
 İletişim formu referanstaki çizgili alanlar ve yuvarlak seçeneklerle düzenlenmiştir. Başvurular e-posta gönderimi olmadan Base44 CRM içindeki Website Enquiries / Sayt müraciətləri bölümüne kaydedilir. Bağlantı `dist/assets/run-more-ads/site/crm-config.json` dosyasındadır; gizli anahtar içermez. Sunucu doğrulama, honeypot, gönderim sınırları ve aynı kimlikle sıralı tekrar kontrolü uygular. Base44 atomik benzersizlik sağlamadığı için eşzamanlı isteklere mutlak tek kayıt garantisi yoktur. Form başarılı sunucu yanıtı gelmeden başarı göstermez; hatada bilgiler korunur. Bir görüşme talebi oluşturur; takvim saati otomatik rezerve edilmez. `complete-site.mjs` tamamlanan sayfaları üretir. Ana sayfadan yeni sayfalara geçişler tamamlanan sayfaları yükler.
+
+## Vercel ve CRM bağlantısı
+
+Vercel’de Framework Preset `Other`, proje kökü depo kökü ve Output Directory `dist` kullanılır. Form mevcut `crm-config.json` üzerinden Base44 kayıt fonksiyonuna doğrudan gönderir; Vercel ortam değişkeni veya tarayıcıya API anahtarı eklemek gerekmez.
+
+CRM fonksiyonunun izinli Origin listesinde `https://runmoreads.vercel.app`, mevcut Sites adresi ve yerel QA adresi bulunur. Alan adı değiştirilirse Base44 `submitWebsiteEnquiry` fonksiyonunun izinli Origin listesine yeni tam origin eklenip CRM uygulaması yeniden yayınlanmalıdır. Sadece GitHub/Vercel yayını yapmak bu sunucu ayarını değiştirmez. Tüm `vercel.app` siteleri için joker izin kullanmayın.
