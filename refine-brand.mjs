@@ -30,7 +30,7 @@ a[data-framer-name="Logo"] h1{--framer-font-size:22px!important;--framer-letter-
 a[data-framer-name="Logo"] h1{--framer-font-size:22px!important}
 .framer-1iu6so h1{--framer-font-size:28px!important}
 .framer-13w7suw{background:#000!important;border-radius:8px!important;overflow:hidden!important}
-.framer-13w7suw .framer-1vs828r{width:100%!important;height:100%!important;top:50%!important;left:50%!important}
+.framer-13w7suw .framer-1vs828r{width:100%!important;height:100%!important;top:50%!important;left:50%!important;filter:none!important;-webkit-filter:none!important}
 [data-framer-name="Preloader"]::before,[data-framer-name="Preloader"]::after{content:none!important}
 .framer-6pNpP .framer-2ms3g7{width:60px!important;height:60px!important;top:0!important;background-image:url('${base}brand/run-more-ads-logo-v3.svg')!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important}
 .framer-6pNpP .framer-2ms3g7>div{display:none!important}
