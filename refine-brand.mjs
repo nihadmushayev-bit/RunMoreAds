@@ -35,6 +35,8 @@ a[data-framer-name="Logo"] h1{--framer-font-size:22px!important}
 .framer-6pNpP .framer-2ms3g7{width:60px!important;height:60px!important;top:0!important;background-image:url('${base}brand/run-more-ads-logo-v3.svg')!important;background-size:contain!important;background-position:center!important;background-repeat:no-repeat!important}
 .framer-6pNpP .framer-2ms3g7>div{display:none!important}
 @media(max-width:809px){a[data-framer-name="Logo"]{gap:8px!important}a[data-framer-name="Logo"] h1{--framer-font-size:21px!important}}
+@media(max-width:767px){.framer-LGey9 .framer-1s4bke0{padding-top:88px!important}.framer-LGey9 .framer-1s4bke0 .framer-3o224j{height:auto!important}}
+
 `;
 
 async function walk(dir) {const out=[];for(const e of await fs.readdir(dir,{withFileTypes:true})){const f=path.join(dir,e.name);if(e.isDirectory())out.push(...await walk(f));else out.push(f);}return out;}
