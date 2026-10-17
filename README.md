@@ -1,42 +1,29 @@
-# Run More Ads
+# Run More Ads — Funnel Site
 
-Güncel ajans web sitesi. Vercel yayını: https://runmoreads.vercel.app/
+Bu depo Run More Ads funnel sitesinin güncel sürümünü içerir. Eski çok sayfalı site bu sürümle değiştirilmiştir; önceki dosyalar Git geçmişinde korunur.
 
-Sites yayını: https://run-more-ads-nihad.vividmug4.chatgpt.site/
+## Önizleme
 
-Site dosyaları `dist/` içindedir. CRM kayıt fonksiyonu Base44 üzerinde ayrıca barındırılır; bu depo web sitesinin kaynaklarını ve form bağlantı ayarını içerir.
+`npm start` komutuyla http://127.0.0.1:4174/ adresini açın. Bağımlılık kurulumu veya derleme gerekmez. Sunucuya yüklenecek dosyalar `dist/` klasöründedir. Vercel'e bu klasörün proje olarak yüklenmesi durumunda Output Directory `dist` olmalıdır.
 
-10 Ekim 2026 tarihinde https://scalible.com/ adresinde yayında olan sitenin tarayıcıya sunulan sürümü.
+## Takvim bağlantısı
 
-Ana sayfa ve About sayfasının düzeni ve Framer etkileşimleri korunmuştur. Case Studies, dört yaratıcı çalışma örneği, Blog ve dört makale, iletişim, gizlilik, kullanım koşulları ve 404 sayfaları tamamlanmıştır. Eski içerik adresleri yeni sayfalara yönlendirilir. Marka adı Run More Ads olarak değiştirilmiştir. Hizmet ve süreç ikonları, tüm video dosyaları ve kadın–erkek–kadın sırasındaki ekip portreleri yenilenmiştir. Kullanıcının sağladığı ana logo menüde, açılış animasyonunda, marka alanlarında ve alt bölümde kullanılır. Ecommerce ve Automotive için özgün butik ve otomotiv marka işaretleri hazırlanmıştır. İletişim adresi runmoreadsteam@gmail.com olarak güncellenmiştir.
+`https://cal.com/runmoreads/30min` bağlantısı `dist/site-config.json` içindeki `calendarUrl` alanına eklendi. Cal.com'un resmi inline embed betiği kullanılarak gerçek müsaitlik ve rezervasyon ekranı sayfanın içine gömülür. Kullanıcının son isteğine göre Cal.com kendi koyu teması ve etkinlik detaylarıyla gösterilir. Ek dış çerçeve, gölge ve 16:9 oran kısıtlaması kaldırılmıştır; takvim doğal yüksekliğine göre büyür. Ana akışta başka sayfaya yönlendirme yapılmaz. Panelin dış kaydırma çubukları iframe üzerinde kapatılmıştır; Cal.com doğal yüksekliğini otomatik güncellemeye devam eder. `ui.autoscroll:false` ile otomatik kaydırma devre dışıdır. Takvimin altındaki yedek bağlantı ve hizmet satırı kaldırılmıştır. Masaüstü gömünün rezervasyon paneli dışındaki 80 px imza şeridi site görünümünden kırpılır. Bu düzenleme Cal.com hesap ayarını değiştirmez. Mobilde imza sağlayıcı tarafından zaten gizlendiği için takvimin içeriği kırpılmaz. Tarih seçimi ve gerçek müsait saatlerin yüklenmesi doğrulandı; test sırasında gerçek toplantı rezervasyonu yapılmadı. Yeni takvimin CRM'ye otomatik aktarımı bu projenin parçası olarak bağlanmadı.
 
-Ekip portreleri yerleşim amaçlı üretilmiş kurgusal kişilerdir. Bunlar gerçek ekip üyelerinin kimlikleri değildir. `image-prompts-v2.json`, farklı toplantı anları ve grafik arka planlı yeni ekip görsellerinin built-in image_gen istemlerini içerir. Videolar gerçek çekim stok görüntüleridir; konu adlarıyla etiketlenmişlerdir. `media-sources.json`, klip isimlerini, kaynak sayfalarını ve lisans bilgilerini içerir. Telefon animasyonu `phone-animation.py` ile özel olarak hazırlanmıştır.
+## Üç müşteri yorumu
 
-## Çalıştırma
+Kullanıcının isteğiyle üç hizmete uygun örnek yorum yazıldı. Bunlar `illustrative:true` olarak işaretlenmiştir ve sayfada gerçek müşteri yorumu olmadıkları açıkça belirtilir. Kişi, marka, Trustpilot doğrulaması veya yıldız puanı uydurulmadı. Gerçek metinler alındığında `testimonials` dizisindeki kayıtları değiştirin, `illustrative` alanını kaldırın ve gerçek yorum sahibinin onayını doğrulayın:
 
-Node.js kurulu bir bilgisayarda bu klasörde terminal açın:
-
-```sh
-npm start
+```json
+{"name":"Müşterinin onaylı adı","role":"Marka / görev","quote":"Müşterinin onayladığı gerçek yorum","approved":true}
 ```
 
-Ardından http://127.0.0.1:4173 adresini açın. Kurulum veya paket indirme gerekmez. `index.html` dosyasını çift tıklamak yerine sunucu kullanın; JavaScript modülleri HTTP üzerinden yüklenir.
+Gerçek bir yıldız puanı verilmişse isteğe bağlı `rating` alanına 1–5 arasında bir tam sayı yazılabilir. Puan verilmezse yıldız gösterilmez. Bu yorumların Trustpilot tarafından doğrulandığı iddia edilmez.
 
-## Dosyalar
+## İçerik
 
-- `dist/`: Sunucuya yüklenebilen site dosyaları.
-- `server.mjs`: Yerel sunucu; videolar için Range isteklerini destekler.
-- `mirror.mjs`: Orijinal yayındaki sürümü yeniden indiren kaynak toplama betiği; değişiklikleri geri alabileceği için düzenlenmiş sürümde yeniden çalıştırmayın.
-- `rebrand.mjs`: Marka, ikon ve medya eşleştirmelerini uygulayan betik.
-- `media-sources.json`: Video isimleri ve kaynakları.
-- `package.json`: Çalıştırma komutları.
+İngilizce metinler ana sitenin Meta reklamları, içerik üretimi ve ecommerce / lead gen hizmetlerine göre hazırlandı. $70K+ müşteriye kazandırılan gelir, 50+ desteklenen marka ve 2024 kuruluş bilgileri kullanıcının daha önce onayladığı bilgilerdir. $70K+ reklam harcaması veya aylık gelir olarak sunulmaz; 50+ marka aktif müşteri sayısı olarak sunulmaz. Logo ve Inter fontları mevcut proje varlıklarından kopyalandı. Referansın başka işletmelere ait isimleri, yorumları, Trustpilot puanı veya takvim bağlantısı kullanılmadı.
 
-Instagram https://www.instagram.com/runmoreadsco adresine, LinkedIn ise https://www.linkedin.com/company/runmoreadsco adresine bağlanır. Twitter kaldırılmıştır; LinkedIn yalnızca metin bağlantısıdır. Ajans rakamları kullanıcının doğruladığı $50K+ gelir ve 50+ markadır; kuruluş 2024, konum Azerbaycan'dır. Eski müşteri sonuçları ve şablon müşteri isimleri kaldırılmıştır. Video case study sayfaları, sitedeki lisanslı stok çekimlerle hazırlanmış yaratıcı konseptlerdir; müşteri kampanyası sonucu iddia etmez.
+## Vercel yayını
 
-İletişim formu referanstaki çizgili alanlar ve yuvarlak seçeneklerle düzenlenmiştir. Başvurular e-posta gönderimi olmadan Base44 CRM içindeki Website Enquiries / Sayt müraciətləri bölümüne kaydedilir. Bağlantı `dist/assets/run-more-ads/site/crm-config.json` dosyasındadır; gizli anahtar içermez. Sunucu doğrulama, honeypot, gönderim sınırları ve aynı kimlikle sıralı tekrar kontrolü uygular. Base44 atomik benzersizlik sağlamadığı için eşzamanlı isteklere mutlak tek kayıt garantisi yoktur. Form başarılı sunucu yanıtı gelmeden başarı göstermez; hatada bilgiler korunur. Bir görüşme talebi oluşturur; takvim saati otomatik rezerve edilmez. `complete-site.mjs` tamamlanan sayfaları üretir. Ana sayfadan yeni sayfalara geçişler tamamlanan sayfaları yükler.
-
-## Vercel ve CRM bağlantısı
-
-Vercel’de Framework Preset `Other`, proje kökü depo kökü ve Output Directory `dist` kullanılır. Form mevcut `crm-config.json` üzerinden Base44 kayıt fonksiyonuna doğrudan gönderir; Vercel ortam değişkeni veya tarayıcıya API anahtarı eklemek gerekmez.
-
-CRM fonksiyonunun izinli Origin listesinde `https://runmoreads.vercel.app`, mevcut Sites adresi ve yerel QA adresi bulunur. Alan adı değiştirilirse Base44 `submitWebsiteEnquiry` fonksiyonunun izinli Origin listesine yeni tam origin eklenip CRM uygulaması yeniden yayınlanmalıdır. Sadece GitHub/Vercel yayını yapmak bu sunucu ayarını değiştirmez. Tüm `vercel.app` siteleri için joker izin kullanmayın.
+Framework: Other. Root Directory: depo kökü. Output Directory: `dist`. Derleme adımı gerekmez. `vercel.json` dosyası statik çıktı klasörünü tanımlar.

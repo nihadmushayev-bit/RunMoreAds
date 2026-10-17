@@ -1,16 +1,7 @@
 node_modules/
-*.tar.gz
-*.zip
-mirror-report.json
-raw-media/
-original-media/
-review-frames/
-*-stock.html
-components-extract.txt
-
-# Local credentials and hosting identity
-.openai/
 .env
 .env.*
-!.env.example
-validation-report.json
+.stage/
+artifacts/
+tools/
+*.tar.gz

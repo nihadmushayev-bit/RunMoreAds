@@ -1,0 +1,26 @@
+{
+  "calendarUrl": "https://cal.com/runmoreads/30min",
+  "testimonials": [
+    {
+      "name": "Creative partnership",
+      "role": "Content Creation · Sample feedback",
+      "quote": "Having one team handle the scripts, filming, and editing makes the whole process feel clear. We can focus on the business while the creative keeps moving.",
+      "approved": true,
+      "illustrative": true
+    },
+    {
+      "name": "Social media partnership",
+      "role": "Social Media · Sample feedback",
+      "quote": "The content feels consistent with our brand, and there is a clear reason behind what gets posted. It feels like a team that understands our business.",
+      "approved": true,
+      "illustrative": true
+    },
+    {
+      "name": "Campaign partnership",
+      "role": "Paid Meta Ads · Sample feedback",
+      "quote": "We know what is being tested, what is changing, and what comes next. That clarity makes it easier to make decisions about our campaigns.",
+      "approved": true,
+      "illustrative": true
+    }
+  ]
+}

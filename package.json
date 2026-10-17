@@ -1,1 +1,7 @@
-{"name":"scalible-copy","private":true,"type":"module","scripts":{"start":"node server.mjs","mirror":"node mirror.mjs"}}
+{
+  "name": "run-more-ads-funnel",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {"start": "node server.mjs", "check": "node --check dist/app.js"}
+}
