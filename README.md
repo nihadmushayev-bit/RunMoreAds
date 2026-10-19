@@ -24,6 +24,10 @@ Gerçek bir yıldız puanı verilmişse isteğe bağlı `rating` alanına 1–5 
 
 İngilizce metinler ana sitenin Meta reklamları, içerik üretimi ve ecommerce / lead gen hizmetlerine göre hazırlandı. $70K+ müşteriye kazandırılan gelir, 50+ desteklenen marka ve 2024 kuruluş bilgileri kullanıcının daha önce onayladığı bilgilerdir. $70K+ reklam harcaması veya aylık gelir olarak sunulmaz; 50+ marka aktif müşteri sayısı olarak sunulmaz. Logo ve Inter fontları mevcut proje varlıklarından kopyalandı. Referansın başka işletmelere ait isimleri, yorumları, Trustpilot puanı veya takvim bağlantısı kullanılmadı.
 
+## Dil seçimi
+
+Varsayılan dil Azerbaycan dilidir (`az`). Footer sağındaki bayraklı seçicide tam dil adları `Azərbaycan dili` ve `English` bulunur. İngilizce sürüm `?lang=en` ile açılır; parametresiz adres her zaman Azerbaycan dilinde açılır. Başlıklar, açıklamalar, erişilebilir etiketler, örnek yorumlar, meta açıklaması ve iletişim metinleri iki dillidir. Takvime de seçilen dil `locale` olarak iletilir. Testte Cal.com gömüsü bu parametreye rağmen İngilizce kaldı; sağlayıcının kendi rezervasyon arayüzü tarayıcı/Cal.com hesap dili ayarlarına bağlıdır ve site çevirisinin parçası olarak zorlanamaz. Dil değiştirildiğinde sayfa yeniden açılır; gerçek rezervasyon verileri Cal.com tarafından yönetilir.
+
 ## Vercel yayını
 
 Framework: Other. Root Directory: depo kökü. Output Directory: `dist`. Derleme adımı gerekmez. `vercel.json` dosyası statik çıktı klasörünü tanımlar.

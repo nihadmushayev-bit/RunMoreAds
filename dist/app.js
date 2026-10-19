@@ -1,5 +1,72 @@
 'use strict';
 
+// The unqualified site URL always opens in Azerbaijani. English has an explicit URL.
+const language = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'az';
+const translations = {
+  az: {
+    title: 'Strateji görüşünüzü planlaşdırın — Run More Ads',
+    description: 'Meta reklamlarınızı bizə həvalə edin. Run More Ads ilə strateji görüş planlaşdırın və biznesinizi böyütmək üçün reklam imkanlarını öyrənin.',
+    skip: 'Görüş təyin etməyə keçin', home: 'Run More Ads — ana səhifə',
+    headlineStart: 'Reklam büdcənizi', headlineGrowth: 'davamlı artıma', headlineWith: 'çevirin.',
+    headlineAds: 'Meta reklamlarınızı', headlineDone: 'bizə həvalə edin.',
+    intro: 'Biznesinizi necə böyüdə biləcəyimizi öyrənmək üçün görüş təyin edin.',
+    trackRecord: 'Run More Ads nəticələri', revenue: 'Müştərilərə qazandırılan gəlir',
+    brands: 'Əməkdaşlıq etdiyimiz brend', since: '2024-cü ildən', based: 'Azərbaycanda fəaliyyət göstəririk',
+    bookLabel: 'Strateji görüş təyin edin', freeCall: 'Ödənişsiz strateji görüş', duration: '30 dəqiqə',
+    videoCall: 'Onlayn video görüş', callDescription: 'Biznesiniz, təklifiniz və böyümə hədəfləriniz haqqında danışaq.',
+    agendaGoals: 'Hədəfləriniz və auditoriyanız', agendaCreative: 'Reklam məzmununuz və təklifiniz',
+    agendaPlan: 'Meta reklamlarınız üçün aydın plan', callNote: 'Yeni müştəri cəlb edən bizneslər və e-ticarət brendləri üçün.',
+    pendingTitle: 'Görüş üçün uyğun vaxt seçək.',
+    pendingDescription: 'Görüş təqvimi yüklənir. Ödənişsiz strateji görüşünüzü planlaşdırmaq üçün komandamızla əlaqə saxlaya bilərsiniz.',
+    contactTeam: 'Komanda ilə əlaqə saxlayın', calendarNote: '30 dəqiqə. Diqqətimiz biznesinizdədir.',
+    feedbackHeading: 'Reklamlarınız üçün daha rahat əməkdaşlıq.',
+    feedbackCaption: 'Bu səhifə üçün hazırlanmış nümunə rəylərdir. Həqiqi müştəri rəyləri deyil.',
+    clientsHeading: 'Müştərilərimiz nə deyir', inOwnWords: 'Öz sözləri ilə.', sampleLabel: 'NÜMUNƏ RƏY',
+    rights: 'Bütün hüquqlar qorunur.', socialLinks: 'Əlaqə və sosial şəbəkələr', contact: 'Əlaqə',
+    chooseLanguage: 'Dil seçin', frameTitle: 'Run More Ads ilə strateji görüş təyin edin', stars: '5 ulduzdan'
+  },
+  en: {
+    title: 'Book Your Strategy Call — Run More Ads',
+    description: 'Meta ads done for you. Book a strategy call with Run More Ads and discover how we script, film, edit, launch and improve your campaigns.',
+    skip: 'Skip to booking', home: 'Run More Ads home',
+    headlineStart: 'Turn Your Ad Spend Into', headlineGrowth: 'Predictable Growth', headlineWith: 'With',
+    headlineAds: 'Meta Ads', headlineDone: 'Done For You',
+    intro: 'Book below to see how we can grow your business.', trackRecord: 'Run More Ads track record',
+    revenue: 'Client revenue generated', brands: 'Brands supported', since: 'Since 2024', based: 'Based in Azerbaijan',
+    bookLabel: 'Book a strategy call', freeCall: 'Free Strategy Call', duration: '30 minutes', videoCall: 'Online video call',
+    callDescription: 'Let’s talk about your business, your offer, and where you want to grow.',
+    agendaGoals: 'Your goals & audience', agendaCreative: 'Your creative & offer', agendaPlan: 'A clear plan for your Meta ads',
+    callNote: 'For lead gen & ecommerce brands.', pendingTitle: 'Let’s find a time to talk.',
+    pendingDescription: 'The scheduling calendar is loading. Contact the team to arrange your free strategy call.',
+    contactTeam: 'Contact the team', calendarNote: '30 minutes. Focused on your business.',
+    feedbackHeading: 'A better way to work on your ads.',
+    feedbackCaption: 'Sample feedback for this preview. These are not published client reviews.',
+    clientsHeading: 'What our clients are saying', inOwnWords: 'In their own words.', sampleLabel: 'ILLUSTRATIVE EXAMPLE',
+    rights: 'All rights reserved.', socialLinks: 'Contact and social links', contact: 'Contact',
+    chooseLanguage: 'Choose language', frameTitle: 'Book your Run More Ads strategy call', stars: 'out of 5 stars'
+  }
+};
+const copy = translations[language];
+document.documentElement.lang = language;
+document.title = copy.title;
+document.querySelector('meta[name="description"]').content = copy.description;
+document.querySelectorAll('[data-i18n]').forEach(element => {
+  element.textContent = copy[element.dataset.i18n];
+});
+document.querySelectorAll('[data-i18n-aria]').forEach(element => {
+  element.setAttribute('aria-label', copy[element.dataset.i18nAria]);
+});
+document.querySelector('#language-flag').src = 'assets/flags/' + language + '.svg';
+const languageSelect = document.querySelector('#language-select');
+languageSelect.value = language;
+languageSelect.addEventListener('change', () => {
+  const next = new URL(location.href);
+  if (languageSelect.value === 'en') next.searchParams.set('lang', 'en');
+  else next.searchParams.delete('lang');
+  next.hash = '';
+  location.assign(next.href);
+});
+
 document.querySelector('#copyright-year').textContent = String(new Date().getFullYear());
 
 function getCalendarUrl(value) {
@@ -26,7 +93,7 @@ function renderCalendar(value) {
       const frame = host.querySelector('iframe');
       if (!frame) return;
       frame.setAttribute('scrolling', 'no');
-      frame.title = 'Book your Run More Ads strategy call';
+      frame.title = copy.frameTitle;
     };
     new MutationObserver(prepareFrame).observe(host, {childList: true, subtree: true});
     // Official Cal.com inline loader. The provider owns availability and booking.
@@ -59,7 +126,7 @@ function renderCalendar(value) {
     window.Cal.ns['rma-funnel']('inline', {
       elementOrSelector: '#cal-inline',
       calLink: calendar.pathname.replace(/^\/+|\/+$/g, ''),
-      config: {layout: 'month_view', theme: 'dark', 'ui.autoscroll': 'false'}
+      config: {layout: 'month_view', theme: 'dark', locale: language, 'ui.autoscroll': 'false'}
     });
     window.Cal.ns['rma-funnel']('ui', {
       theme: 'dark',
@@ -76,7 +143,7 @@ function renderCalendar(value) {
   }
   const frame = document.createElement('iframe');
   frame.className = 'calendar-embed';
-  frame.title = 'Book your Run More Ads strategy call';
+  frame.title = copy.frameTitle;
   frame.src = calendar.href;
   frame.loading = 'eager';
   frame.referrerPolicy = 'strict-origin-when-cross-origin';
@@ -87,7 +154,8 @@ function renderCalendar(value) {
 
 function renderTestimonials(items) {
   if (!Array.isArray(items)) return;
-  const reviews = items.filter(item => item && item.approved === true && typeof item.name === 'string' && item.name.trim() && typeof item.quote === 'string' && item.quote.trim()).slice(0, 3);
+  const reviews = items.filter(item => item && item.approved === true && typeof item.name === 'string' && item.name.trim() && typeof item.quote === 'string' && item.quote.trim()).slice(0, 3)
+    .map(item => ({...item, ...item.translations?.[language]}));
   if (!reviews.length) return;
   const cards = reviews.map(review => {
     const card = document.createElement('article');
@@ -95,13 +163,13 @@ function renderTestimonials(items) {
     if (review.illustrative === true) {
       const label = document.createElement('div');
       label.className = 'sample-label';
-      label.textContent = 'ILLUSTRATIVE EXAMPLE';
+      label.textContent = copy.sampleLabel;
       card.append(label);
     }
     if (Number.isInteger(review.rating) && review.rating >= 1 && review.rating <= 5) {
       const stars = document.createElement('div');
       stars.className = 'review-stars';
-      stars.setAttribute('aria-label', review.rating + ' out of 5 stars');
+      stars.setAttribute('aria-label', language === 'az' ? copy.stars + ' ' + review.rating : review.rating + ' ' + copy.stars);
       stars.textContent = '★'.repeat(review.rating);
       card.append(stars);
     }
@@ -129,9 +197,8 @@ function renderTestimonials(items) {
   grid.replaceChildren(...cards, ...placeholders);
   const hasExamples = reviews.some(review => review.illustrative === true);
   document.querySelector('#feedback-caption').textContent = hasExamples
-    ? 'Sample feedback for this preview. These are not published client reviews.'
-    : 'In their own words.';
-  if (hasExamples) document.querySelector('#feedback-heading').textContent = 'A better way to work on your ads.';
+    ? copy.feedbackCaption : copy.inOwnWords;
+  document.querySelector('#feedback-heading').textContent = hasExamples ? copy.feedbackHeading : copy.clientsHeading;
 }
 
 fetch('./site-config.json', {cache:'no-store'})
