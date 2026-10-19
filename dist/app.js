@@ -1,7 +1,9 @@
 'use strict';
 
-// The unqualified site URL always opens in Azerbaijani. English has an explicit URL.
-const language = new URLSearchParams(location.search).get('lang') === 'en' ? 'en' : 'az';
+// Each domain has its own default; an explicit language still lets visitors switch.
+const defaultLanguage = ['runmoreads.online', 'www.runmoreads.online'].includes(location.hostname.toLowerCase()) ? 'en' : 'az';
+const requestedLanguage = new URLSearchParams(location.search).get('lang');
+const language = ['az', 'en'].includes(requestedLanguage) ? requestedLanguage : defaultLanguage;
 const translations = {
   az: {
     title: 'Strateji görüşünüzü planlaşdırın — Run More Ads',
@@ -59,8 +61,8 @@ document.querySelectorAll('[data-i18n-aria]').forEach(element => {
 const languageToggle = document.querySelector('#language-toggle');
 const nextLanguage = language === 'az' ? 'en' : 'az';
 const nextUrl = new URL(location.href);
-if (nextLanguage === 'en') nextUrl.searchParams.set('lang', 'en');
-else nextUrl.searchParams.delete('lang');
+if (nextLanguage === defaultLanguage) nextUrl.searchParams.delete('lang');
+else nextUrl.searchParams.set('lang', nextLanguage);
 nextUrl.hash = '';
 languageToggle.href = nextUrl.href;
 languageToggle.hreflang = nextLanguage;
