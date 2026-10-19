@@ -1,7 +1,7 @@
 'use strict';
 
-// Each domain has its own default; an explicit language still lets visitors switch.
-const defaultLanguage = ['runmoreads.online', 'www.runmoreads.online'].includes(location.hostname.toLowerCase()) ? 'en' : 'az';
+// English is the default. Visitors can still explicitly switch to Azerbaijani.
+const defaultLanguage = 'en';
 const requestedLanguage = new URLSearchParams(location.search).get('lang');
 const language = ['az', 'en'].includes(requestedLanguage) ? requestedLanguage : defaultLanguage;
 const translations = {

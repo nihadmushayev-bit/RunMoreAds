@@ -1,6 +1,6 @@
 # Run More Ads — Funnel Site
 
-Bu depo Run More Ads funnel sitesinin güncel sürümünü içerir. Eski çok sayfalı site bu sürümle değiştirilmiştir; önceki dosyalar Git geçmişinde korunur.
+Bu proje yalnızca bu klasörde tutulur. Ana Run More Ads sitesi, GitHub deposu ve CRM projesiyle ayrı kaynaklara sahiptir. Referans: https://agencyascension.io/apply?utm_source=12hr-course
 
 ## Önizleme
 
@@ -26,8 +26,4 @@ Gerçek bir yıldız puanı verilmişse isteğe bağlı `rating` alanına 1–5 
 
 ## Dil seçimi
 
-`runmoreads.online` ve `www.runmoreads.online` varsayılan olarak İngilizce (`en`), `letwork.runmoreads.online` varsayılan olarak Azerbaycan dilinde (`az`) açılır. Yerel ve Sites önizleme adreslerinde varsayılan dil Azerbaycan dilidir. Footer sağında dünya ikonlu tek bir bağlantı bulunur. Azerbaycan sürümünde `English`, İngilizce sürümünde `Azərbaycan dili` yazar. Açılır menü yoktur; bağlantıya tıklamak sayfayı diğer dilin adresinde yeniden açar. `?lang=en` ve `?lang=az` parametreleri domain varsayılanını geçersiz kılar. Dünya ikonlu bağlantı diğer dile geçer; domainin varsayılan diline dönerken dil parametresi kaldırılır. Başlıklar, açıklamalar, erişilebilir etiketler, örnek yorumlar, meta açıklaması ve iletişim metinleri iki dillidir. Takvime de seçilen dil `locale` olarak iletilir. Testte Cal.com gömüsü bu parametreye rağmen İngilizce kaldı; sağlayıcının kendi rezervasyon arayüzü tarayıcı/Cal.com hesap dili ayarlarına bağlıdır ve site çevirisinin parçası olarak zorlanamaz. Dil değiştirildiğinde sayfa yeniden açılır; gerçek rezervasyon verileri Cal.com tarafından yönetilir.
-
-## Vercel yayını
-
-Framework: Other. Root Directory: depo kökü. Output Directory: `dist`. Derleme adımı gerekmez. `vercel.json` dosyası statik çıktı klasörünü tanımlar.
+Funnel tüm adreslerde varsayılan olarak İngilizce (`en`) açılır. `letwork.runmoreads.online` funnel adresidir; `runmoreads.online` ayrı ana siteye ayrılmıştır. Footer sağında dünya ikonlu tek bir bağlantı bulunur. Azerbaycan sürümünde `English`, İngilizce sürümünde `Azərbaycan dili` yazar. Açılır menü yoktur; bağlantıya tıklamak sayfayı diğer dilin adresinde yeniden açar. `?lang=en` ve `?lang=az` parametreleri domain varsayılanını geçersiz kılar. Dünya ikonlu bağlantı diğer dile geçer; domainin varsayılan diline dönerken dil parametresi kaldırılır. Başlıklar, açıklamalar, erişilebilir etiketler, örnek yorumlar, meta açıklaması ve iletişim metinleri iki dillidir. Takvime de seçilen dil `locale` olarak iletilir. Testte Cal.com gömüsü bu parametreye rağmen İngilizce kaldı; sağlayıcının kendi rezervasyon arayüzü tarayıcı/Cal.com hesap dili ayarlarına bağlıdır ve site çevirisinin parçası olarak zorlanamaz. Dil değiştirildiğinde sayfa yeniden açılır; gerçek rezervasyon verileri Cal.com tarafından yönetilir.
