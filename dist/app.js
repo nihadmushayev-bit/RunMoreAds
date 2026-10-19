@@ -23,7 +23,7 @@ const translations = {
     feedbackCaption: 'Bu səhifə üçün hazırlanmış nümunə rəylərdir. Həqiqi müştəri rəyləri deyil.',
     clientsHeading: 'Müştərilərimiz nə deyir', inOwnWords: 'Öz sözləri ilə.', sampleLabel: 'NÜMUNƏ RƏY',
     rights: 'Bütün hüquqlar qorunur.', socialLinks: 'Əlaqə və sosial şəbəkələr', contact: 'Əlaqə',
-    chooseLanguage: 'Dil seçin', frameTitle: 'Run More Ads ilə strateji görüş təyin edin', stars: '5 ulduzdan'
+    switchLanguage: 'İngilis dilinə keçin', frameTitle: 'Run More Ads ilə strateji görüş təyin edin', stars: '5 ulduzdan'
   },
   en: {
     title: 'Book Your Strategy Call — Run More Ads',
@@ -43,7 +43,7 @@ const translations = {
     feedbackCaption: 'Sample feedback for this preview. These are not published client reviews.',
     clientsHeading: 'What our clients are saying', inOwnWords: 'In their own words.', sampleLabel: 'ILLUSTRATIVE EXAMPLE',
     rights: 'All rights reserved.', socialLinks: 'Contact and social links', contact: 'Contact',
-    chooseLanguage: 'Choose language', frameTitle: 'Book your Run More Ads strategy call', stars: 'out of 5 stars'
+    switchLanguage: 'Switch to Azerbaijani', frameTitle: 'Book your Run More Ads strategy call', stars: 'out of 5 stars'
   }
 };
 const copy = translations[language];
@@ -56,16 +56,17 @@ document.querySelectorAll('[data-i18n]').forEach(element => {
 document.querySelectorAll('[data-i18n-aria]').forEach(element => {
   element.setAttribute('aria-label', copy[element.dataset.i18nAria]);
 });
-document.querySelector('#language-flag').src = 'assets/flags/' + language + '.svg';
-const languageSelect = document.querySelector('#language-select');
-languageSelect.value = language;
-languageSelect.addEventListener('change', () => {
-  const next = new URL(location.href);
-  if (languageSelect.value === 'en') next.searchParams.set('lang', 'en');
-  else next.searchParams.delete('lang');
-  next.hash = '';
-  location.assign(next.href);
-});
+const languageToggle = document.querySelector('#language-toggle');
+const nextLanguage = language === 'az' ? 'en' : 'az';
+const nextUrl = new URL(location.href);
+if (nextLanguage === 'en') nextUrl.searchParams.set('lang', 'en');
+else nextUrl.searchParams.delete('lang');
+nextUrl.hash = '';
+languageToggle.href = nextUrl.href;
+languageToggle.hreflang = nextLanguage;
+languageToggle.lang = nextLanguage;
+languageToggle.setAttribute('aria-label', copy.switchLanguage);
+document.querySelector('#language-name').textContent = nextLanguage === 'en' ? 'English' : 'Azərbaycan dili';
 
 document.querySelector('#copyright-year').textContent = String(new Date().getFullYear());
 

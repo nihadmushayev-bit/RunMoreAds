@@ -26,7 +26,7 @@ Gerçek bir yıldız puanı verilmişse isteğe bağlı `rating` alanına 1–5 
 
 ## Dil seçimi
 
-Varsayılan dil Azerbaycan dilidir (`az`). Footer sağındaki bayraklı seçicide tam dil adları `Azərbaycan dili` ve `English` bulunur. İngilizce sürüm `?lang=en` ile açılır; parametresiz adres her zaman Azerbaycan dilinde açılır. Başlıklar, açıklamalar, erişilebilir etiketler, örnek yorumlar, meta açıklaması ve iletişim metinleri iki dillidir. Takvime de seçilen dil `locale` olarak iletilir. Testte Cal.com gömüsü bu parametreye rağmen İngilizce kaldı; sağlayıcının kendi rezervasyon arayüzü tarayıcı/Cal.com hesap dili ayarlarına bağlıdır ve site çevirisinin parçası olarak zorlanamaz. Dil değiştirildiğinde sayfa yeniden açılır; gerçek rezervasyon verileri Cal.com tarafından yönetilir.
+Varsayılan dil Azerbaycan dilidir (`az`). Footer sağında dünya ikonlu tek bir bağlantı bulunur. Azerbaycan sürümünde `English`, İngilizce sürümünde `Azərbaycan dili` yazar. Açılır menü yoktur; bağlantıya tıklamak sayfayı diğer dilin adresinde yeniden açar. İngilizce sürüm `?lang=en` ile açılır; parametresiz adres her zaman Azerbaycan dilinde açılır. Başlıklar, açıklamalar, erişilebilir etiketler, örnek yorumlar, meta açıklaması ve iletişim metinleri iki dillidir. Takvime de seçilen dil `locale` olarak iletilir. Testte Cal.com gömüsü bu parametreye rağmen İngilizce kaldı; sağlayıcının kendi rezervasyon arayüzü tarayıcı/Cal.com hesap dili ayarlarına bağlıdır ve site çevirisinin parçası olarak zorlanamaz. Dil değiştirildiğinde sayfa yeniden açılır; gerçek rezervasyon verileri Cal.com tarafından yönetilir.
 
 ## Vercel yayını
 
